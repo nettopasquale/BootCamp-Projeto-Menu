@@ -3,56 +3,148 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/quantity.css">
+    <script defer src="./js/jquery-3.7.1.min.js"></script>
+    <script defer src="./js/jquery.mask.min.js"> </script>
+    <script defer src="./js/quantity.js"></script>
+    <script defer src="./js/index.js" type="module"></script>
     <title>Projeto Menu</title>
 </head>
 <body>
-    <header>
-        <div>
-            <img src="./assets/home.jpg" alt="banner">
-        </div>
-    </header>
-    <h1>Menu - Faça A Sua Escolha</h1>
-
-    <div class="container_principal">
-        <div class="container_textos">
-            <h2>Patros Principais</h2>
-            <p>Todos os pratos acompanham arroz, feijão e a sobremesa do dia.</p>
-            <div class="container_pratos">
-                <img src="./assets/bife.jpg" alt="bife">
-                <img src="./assets/coxa.jpg" alt="coxa">
-                <img src="./assets/panela.jpg" alt="panela">
+    <div class="corpo-cardapio">
+        <header>
+            <div>
+                <img src="./assets/home.jpg" alt="banner">
             </div>
-        </div>
-    </div>
-
-    <div class="container_secundario">
-        <div class="container_secundario_textos">
-            <h2>Acompanhamentos</h2>
-            <p>Porções para uma pessoa</p>
-            <div class="container_acompanhamentos">
-                <img src="./assets/farofa.jpg" alt="bife">
-                <img src="./assets/salada.jpg" alt="coxa">
-                <img src="./assets/torresmo.jpg" alt="panela">
-            </div>
-        </div>
-    </div>
-
-    <div class="container_formulario">
-        <div class="container_secundario_textos">
-            <h2>Dados Pessoais</h2>
-        </div>
-        <div class="formulario">
-           <form action="">
-            <input type="text" placeholder="Digite Seu nome">
-            <input type="tel" placeholder="Digite Seu telefone">
-            <input type="email" placeholder="Digite Seu email">
-           </form>
-        </div>
-        <button>Calcular</button>
-    </div>
-
-    <div>JAVASCRIPT AQUI</div>
+        </header>
+        <h1>Menu - Faça A Sua Escolha</h1>
     
+        <div class="container_principal">
+            <div class="container_textos">
+                <h2>Patros Principais</h2>
+                <p>Todos os pratos acompanham arroz, feijão e a sobremesa do dia.</p>
+                <div class="container_pratos">
+                    <div class="container_cards">
+                        <img src="./assets/bife.jpg" alt="bife" class="card-prato">
+                        <span>Bife com batata</span>
+                        <span class="precos">R$ 30,00</span>
+                        <div style="text-align: center;">
+        
+                            <div class="quantity buttons_added">
+                                <input type="button" value="-" class="minus">
+                                <input type="number" step="1" min="0" max="" id="1" name="quantity_prato" value="0" title="Qty"
+                                    class="input-text qty text" size="4" pattern="" inputmode="">
+                                <input type="button" value="+" class="plus">
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="container_cards">
+                        <img src="./assets/coxa.jpg" alt="coxa" class="card-prato">
+                        <span>Coxa de Frango Crocante</span>
+                        <span class="precos">R$ 25,00</span>
+                        <div style="text-align: center;">
+        
+                            <div class="quantity buttons_added">
+                                <input type="button" value="-" class="minus">
+                                <input type="number" step="1" min="0" max="" id="2" name="quantity_prato" value="0" title="Qty"
+                                    class="input-text qty text" size="4" pattern="" inputmode="">
+                                <input type="button" value="+" class="plus">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="container_cards">
+                        <img src="./assets/panela.jpg" alt="panela" class="card-prato">
+                        <span>Carne de Panela</span>
+                        <span class="precos">R$ 22,00</span>
+                        <div style="text-align: center;">
+        
+                            <div class="quantity buttons_added">
+                                <input type="button" value="-" class="minus">
+                                <input type="number" step="1" min="0" max="" id="3" name="quantity_prato" value="0" title="Qty"
+                                    class="input-text qty text" size="4" pattern="" inputmode="">
+                                <input type="button" value="+" class="plus">
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container_secundario">
+            <div class="container_secundario_textos">
+                <h2>Acompanhamentos</h2>
+                <p>Porções para uma pessoa</p>
+                <div class="container_acompanhamentos">
+                    <div class="container_cards">
+                        <img src="./assets/farofa.jpg" alt="farofa" class="card-acompanhamento">
+                        <span>Farofa</span>
+                        <span class="precos">R$ 10,00</span>
+                        <div style="text-align: center;">
+                           <div class="quantity buttons_added">
+                                <input type="button" value="-" class="minus">
+                                <input type="number" step="1" min="0" max="" id="1" name="quantity_acom" value="0" title="Qty"
+                                    class="input-text qty text" size="4" pattern="" inputmode="">
+                                <input type="button" value="+" class="plus">
+                            </div>
+                            <div id="output">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container_cards">
+                        <img src="./assets/salad.jpg" alt="salada" class="card-acompanhamento">
+                        <span>Salada</span>
+                        <span class="precos">R$ 80,00</span>
+                        <div style="text-align: center;">
+                           <div class="quantity buttons_added">
+                                <input type="button" value="-" class="minus">
+                                <input type="number" step="1" min="0" max="" id="2" name="quantity_acom" value="0" title="Qty"
+                                    class="input-text qty text" size="4" pattern="" inputmode="">
+                                <input type="button" value="+" class="plus">
+                            </div>
+                            <div id="output">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="container_cards">
+                        <img src="./assets/torresmo.jpg" alt="torresmo" class="card-acompanhamento">
+                        <span>Torresmo</span>
+                        <span class="precos">R$ 12,00</span>
+                        <div style="text-align: center;">
+                           <div class="quantity buttons_added">
+                                <input type="button" value="-" class="minus">
+                                <input type="number" step="1" min="0" max="" id="3" name="quantity_acom" value="0" title="Qty"
+                                    class="input-text qty text" size="4" pattern="" inputmode="">
+                                <input type="button" value="+" class="plus">
+                            </div>
+                            <div id="output">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="container_formulario">
+            <div class="container_secundario_textos">
+                <h2>Dados Pessoais</h2>
+            </div>
+            <div class="formulario">
+                <input id="nome" type="text" placeholder="Digite Seu nome">
+                <input id="telefone" type="text" placeholder="Digite Seu telefone">
+                <input id="email" type="text" placeholder="Digite Seu email">
+            </div>
+            <button class="btn" >Calcular</button>
+        </div>
+    
+        <div id="output-pedido" class="">
+        </div>
+
+    </div>
 </body>
 </html>

@@ -1,0 +1,91 @@
+body{
+    background-color: #c3c2c0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.corpo-cardapio{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: auto;
+    background-color: #fff;
+    width: 53.125rem;
+    padding: 2rem;
+    border-radius: 10px;
+}
+
+.container_textos, .container_secundario_textos{
+    text-align: center;
+    font-weight: bold;
+    margin: auto;
+}
+
+.container_principal, .container_secundario{
+    display: flex;
+    width: 53.125rem;
+    margin: auto;
+    background-color: #f5f5f5;
+    box-shadow: 0 .5rem 1rem 0 rgba(0,0,0, .2);
+}
+
+.container_pratos, .container_acompanhamentos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 500px;
+}
+
+.container_cards{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    border: 8px solid #f5f5f5;
+    border-radius: 6px;
+    box-shadow: 0 .5rem 1rem 0 rgba(0,0,0, .2);
+}
+
+.card-prato, .card-acompanhamento{
+    /* width: 80%; */
+}
+
+.precos{
+    color: #115a08;
+    font-weight: 700;
+}
+
+.container_formulario{
+    display: flex;
+    flex-direction: column;
+    width: 53.125rem;
+    margin: auto;
+    background-color: #f5f5f5;
+    box-shadow: 0 .5rem 1rem 0 rgba(0,0,0, .2);
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.formulario > input{
+    padding: .9rem;
+    width: 65%;
+    height: 5px;
+    margin: .8125rem;
+    border-radius: 6px;
+    border: 0;
+}
+
+button{
+    background-color: #007aff;
+    color: #fff;
+    border:  0;
+    border-radius: 2px;
+}
+
+button:hover{
+    cursor: pointer;
+}
