@@ -10,7 +10,6 @@ const acompanhamentos = [
     {id:3, name: "Torresmo", price: 12.00},
 ]
 
-
 let telefone = $("#telefone").mask("(99) 99999-9999");
 
 const btn = $(".btn")
@@ -23,7 +22,7 @@ btn.on("click", function calc(){
     let quantitesAcom = document.getElementsByName("quantity_acom");
     
     let output = document.getElementById("output-pedido");
-    output.innerHTML = "";
+    output.innerHTML = " "
 
     let totalPratos = 0;
     let totalAcom = 0;
@@ -34,18 +33,18 @@ btn.on("click", function calc(){
         currency: "BRL",
     })
 
-    output.innerHTML = `
-    <div>
-    Caro <b>${nome}</b>
-    </div>
-    
-    <div>
-    Seguem os dados do seu pedido.
-    </div>
-    
-    <div>
-    O seu pedido é: 
-    </div>
+    output.innerHTML =`
+        <div>
+        Caro <b>${nome}</b>
+        </div>
+        
+        <div>
+        Seguem os dados do seu pedido.
+        </div>
+        
+        <div>
+        O seu pedido é: 
+        </div>
     `
     for (let input of quantitesPratos) {
         let id = input.id
@@ -83,7 +82,3 @@ btn.on("click", function calc(){
     output.innerHTML += `<b>Preço Final: ${formatter.format(totalFinal)}</b>`
 
 });
-
-
-
-
