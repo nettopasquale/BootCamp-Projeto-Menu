@@ -34,14 +34,18 @@ btn.on("click", function calc(){
         currency: "BRL",
     })
 
-    nome.classList.add("nome-pedido")
-
     output.innerHTML = `
-    Caro ${nome}
-    <span>Seguem os dados do seu pedido.</span>
-
-    <span>O seu pedido é: </span>
-
+    <div>
+    Caro <b>${nome}</b>
+    </div>
+    
+    <div>
+    Seguem os dados do seu pedido.
+    </div>
+    
+    <div>
+    O seu pedido é: 
+    </div>
     `
     for (let input of quantitesPratos) {
         let id = input.id
@@ -49,11 +53,11 @@ btn.on("click", function calc(){
         if (input.value != 0) {
             
             output.innerHTML += `
-                <li>
-                    <ul>
+                <ul>
+                    <li>
                     Preto: ${patrosPrincipais[id - 1].name} -  Preço unitário: R$${patrosPrincipais[id - 1].price} - Quantidade: ${parseFloat(input.value)} - Total: R$${patrosPrincipais[id - 1].price * parseFloat(input.value)}
-                    </ul>
                     </li>
+                </ul>
              `
             totalPratos += patrosPrincipais[id - 1].price * parseFloat(input.value);  
             
@@ -65,11 +69,11 @@ btn.on("click", function calc(){
         if (input.value != 0) {
             
             output.innerHTML += `
-                <li>
-                    <ul>
+                <ul>
+                    <li>
                         Acompanhamento: ${acompanhamentos[id - 1].name} -  Preço unitário: R$${acompanhamentos[id - 1].price} - Quantidade: ${parseFloat(input.value)} - Total: R$${acompanhamentos[id - 1].price * parseFloat(input.value)}
-                        </ul>
                     </li>
+                </ul>
              `
              totalAcom += acompanhamentos[id -1].price * parseFloat(input.value);
         }

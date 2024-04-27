@@ -74,6 +74,7 @@ body{
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    margin-top: -15px;
 }
 
 .formulario > input{
@@ -105,18 +106,5 @@ button:hover{
     align-items: flex-start;
     justify-content: left;
     text-align: left;
-    font-size: 0.8rem;
-    margin: 0;
-}
-
-.container_pedido > span{
-
-}
-
-.container_pedido > li > ul{
-
-}
-
-.nome-pedido{
-    font-weight: 700;
+    font-size: 0.9rem;
 }
