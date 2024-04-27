@@ -6,7 +6,7 @@ body{
 .corpo-cardapio{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin: auto;
     background-color: #fff;
@@ -15,38 +15,42 @@ body{
     border-radius: 10px;
 }
 
-.container_textos, .container_secundario_textos{
-    text-align: center;
-    font-weight: bold;
-    margin: auto;
-}
-
 .container_principal, .container_secundario{
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 53.125rem;
-    margin: auto;
+    height: 33.12rem;
+    margin-bottom: 2.18rem;
     background-color: #f5f5f5;
     box-shadow: 0 .5rem 1rem 0 rgba(0,0,0, .2);
+    border-radius: 10px;
+}
+
+.container_textos, .container_secundario_textos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem;
 }
 
 .container_pratos, .container_acompanhamentos{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 500px;
+    text-align: center;
 }
 
 .container_cards{
     display: flex;
     flex-direction: column;
-    width: 250px;
+    margin: .1rem 1rem;
+    width: 230px;
     border: 8px solid #f5f5f5;
     border-radius: 6px;
     box-shadow: 0 .5rem 1rem 0 rgba(0,0,0, .2);
-}
-
-.card-prato, .card-acompanhamento{
-    /* width: 80%; */
 }
 
 .precos{
@@ -57,10 +61,12 @@ body{
 .container_formulario{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     width: 53.125rem;
     margin: auto;
     background-color: #f5f5f5;
     box-shadow: 0 .5rem 1rem 0 rgba(0,0,0, .2);
+    border-radius: 10px;
 }
 
 .formulario{
@@ -80,12 +86,37 @@ body{
 }
 
 button{
+    margin-top: 1rem;
     background-color: #007aff;
     color: #fff;
+    font-size: 1.2rem;
     border:  0;
-    border-radius: 2px;
+    border-radius: 4px;
+    padding: 1.3rem 24.52rem;
 }
 
 button:hover{
     cursor: pointer;
+}
+
+.container_pedido{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: left;
+    text-align: left;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.container_pedido > span{
+
+}
+
+.container_pedido > li > ul{
+
+}
+
+.nome-pedido{
+    font-weight: 700;
 }

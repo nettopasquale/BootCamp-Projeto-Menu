@@ -16,7 +16,7 @@ let telefone = $("#telefone").mask("(99) 99999-9999");
 const btn = $(".btn")
 
 btn.on("click", function calc(){
-    let nome = document.getElementById("nome");
+    let nome = document.getElementById("nome").value;
     
     let quantitesPratos = document.getElementsByName("quantity_prato");
 
@@ -34,12 +34,14 @@ btn.on("click", function calc(){
         currency: "BRL",
     })
 
+    nome.classList.add("nome-pedido")
+
     output.innerHTML = `
-    <div>
-    Caro ${nome.value}<br>
-    Seguem os dados do seu pedido.<br>
-    O seu pedido é:<br>
-    </div>
+    Caro ${nome}
+    <span>Seguem os dados do seu pedido.</span>
+
+    <span>O seu pedido é: </span>
+
     `
     for (let input of quantitesPratos) {
         let id = input.id
@@ -47,13 +49,11 @@ btn.on("click", function calc(){
         if (input.value != 0) {
             
             output.innerHTML += `
-            
                 <li>
                     <ul>
-                        Preto: ${patrosPrincipais[id - 1].name} -  Preço unitário: ${patrosPrincipais[id - 1].price} - Quantidade: ${parseFloat(input.value)} - Total: ${patrosPrincipais[id - 1].price * parseFloat(input.value)}
+                    Preto: ${patrosPrincipais[id - 1].name} -  Preço unitário: R$${patrosPrincipais[id - 1].price} - Quantidade: ${parseFloat(input.value)} - Total: R$${patrosPrincipais[id - 1].price * parseFloat(input.value)}
                     </ul>
                     </li>
-            
              `
             totalPratos += patrosPrincipais[id - 1].price * parseFloat(input.value);  
             
@@ -65,10 +65,9 @@ btn.on("click", function calc(){
         if (input.value != 0) {
             
             output.innerHTML += `
-            
                 <li>
                     <ul>
-                        Acompanhamento: ${acompanhamentos[id - 1].name} -  Preço unitário: ${acompanhamentos[id - 1].price} - Quantidade: ${parseFloat(input.value)} - Total: ${acompanhamentos[id - 1].price * parseFloat(input.value)}
+                        Acompanhamento: ${acompanhamentos[id - 1].name} -  Preço unitário: R$${acompanhamentos[id - 1].price} - Quantidade: ${parseFloat(input.value)} - Total: R$${acompanhamentos[id - 1].price * parseFloat(input.value)}
                         </ul>
                     </li>
              `
@@ -77,7 +76,7 @@ btn.on("click", function calc(){
     }
     
     totalFinal = totalPratos + totalAcom;
-    output.innerHTML += `Preço: ${formatter.format(totalFinal)}</br>`
+    output.innerHTML += `<b>Preço Final: ${formatter.format(totalFinal)}</b>`
 
 });
 
